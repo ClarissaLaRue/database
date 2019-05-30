@@ -14,7 +14,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public abstract class AbstractJDBCDao<T extends Entity> implements InterfaceDao<T> {
+public abstract class AbstractJDBCDao<T extends Entity, PK extends Serializable> implements InterfaceDao<T, PK> {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -28,7 +28,7 @@ public abstract class AbstractJDBCDao<T extends Entity> implements InterfaceDao<
 
     protected abstract String getIdComparisionStatementPart();
 
-    protected abstract void prepareStatementForGetByPK(PreparedStatement statement, T obj) throws SQLException;
+    protected abstract void prepareStatementForGetByPK(PreparedStatement statement, PK primaryKey) throws SQLException;
 
     protected abstract void prepareStatementForUpdate(PreparedStatement statement, T obj) throws SQLException;
 
@@ -39,7 +39,7 @@ public abstract class AbstractJDBCDao<T extends Entity> implements InterfaceDao<
     protected abstract List<T> parseResultSet(ResultSet rs) throws SQLException;
 
     @Override
-    public T getByPK(T primaryKey) throws Exception {
+    public List<T>  get(PK primaryKey) throws Exception {
         List<T> list;
         String sql = getSelectQuery();
         sql += getIdComparisionStatementPart();
@@ -53,10 +53,7 @@ public abstract class AbstractJDBCDao<T extends Entity> implements InterfaceDao<
         if (list == null || list.size() == 0) {
             return null;
         }
-        if (list.size() > 1) {
-            throw new Exception( "Received more than one record." );
-        }
-        return list.iterator().next();
+        return list;
     }
 
     @Override

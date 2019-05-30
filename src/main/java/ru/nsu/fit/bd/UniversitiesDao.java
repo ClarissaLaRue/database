@@ -13,7 +13,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public class UniversitiesDao extends AbstractJDBCDao<Universities> {
+public class UniversitiesDao extends AbstractJDBCDao<Universities, Universities> {
 
     @Override
     public String getSelectQuery() {
@@ -74,6 +74,7 @@ public class UniversitiesDao extends AbstractJDBCDao<Universities> {
         List<Universities> universities = new ArrayList<>();
         while (rs.next()) {
             Universities uni = new Universities(rs.getString("name"), rs.getURL("link"));
+            universities.add(uni);
         }
         return universities;
     }

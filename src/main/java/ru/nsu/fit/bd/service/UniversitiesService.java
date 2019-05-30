@@ -12,10 +12,6 @@ public class UniversitiesService {
     @Autowired
     private UniversitiesDao universitiesDao;
 
-    public Universities getByPK(Universities obj) throws Exception {
-        return universitiesDao.getByPK(obj );
-    }
-
     public void update(Universities obj) throws Exception {
         universitiesDao.update( obj );
     }

@@ -1,10 +1,11 @@
 package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "INFRASTRUCTURE")
-public class Infrastructure {
+public class Infrastructure implements Serializable {
     @javax.persistence.Id
     @Column(name = "ID")
     @GeneratedValue

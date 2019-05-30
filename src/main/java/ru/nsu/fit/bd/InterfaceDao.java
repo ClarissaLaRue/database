@@ -1,10 +1,11 @@
 package ru.nsu.fit.bd;
 
 import javax.persistence.Entity;
+import java.io.Serializable;
 import java.util.List;
 
-public interface InterfaceDao<T> {
-    public T getByPK(T obj) throws Exception;
+public interface InterfaceDao<T, PK> {
+    public List<T>  get(PK obj) throws Exception;
 
     public void update(T obj) throws Exception;
 

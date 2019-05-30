@@ -1,10 +1,12 @@
 package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
 @Entity
 @Table(name = "FACULTIES")
-public class Faculties {
+public class Faculties implements Serializable, Entity {
     @Id
     @Column(name = "ID")
     @GeneratedValue
@@ -15,7 +17,16 @@ public class Faculties {
     private Integer UniversityId;
 
     @Column(name = "Name")
-    private String[] Name;
+    private String Name;
+
+    public Faculties(int universityID, String name) {
+        this.UniversityId = universityID;
+        this.Name = name;
+    }
+
+    public Faculties() {
+
+    }
 
     public Integer getId() {
         return id;
@@ -33,11 +44,21 @@ public class Faculties {
         UniversityId = universityId;
     }
 
-    public String[] getName() {
+    public String getName() {
         return Name;
     }
 
-    public void setName(String[] name) {
+    public void setName(String name) {
         Name = name;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }
