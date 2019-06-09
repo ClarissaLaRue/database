@@ -16,14 +16,14 @@ public class FacultiesController {
     @Autowired
     private FacultiesService facultiesService;
 
-    @GetMapping("/{UniId}")
-    public List<Faculties> get(@PathVariable Integer UniId) throws Exception {
-        return facultiesService.get(UniId);
+    @GetMapping("/{UniName}")
+    public List<String> get(@PathVariable String UniName) throws Exception {
+        return facultiesService.get(UniName);
     }
 
-    @GetMapping("/nsu")
-    public List<Faculties> get() throws Exception {
-        Integer UniID = 1;
-        return facultiesService.get(UniID);
-    }
+//    @GetMapping("/nsu")
+//    public List<Faculties> get() throws Exception {
+//        Integer UniID = 1;
+//        //return facultiesService.get(UniID);
+//    }
 }

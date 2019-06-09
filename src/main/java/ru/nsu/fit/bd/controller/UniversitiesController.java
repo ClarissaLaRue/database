@@ -14,23 +14,6 @@ public class UniversitiesController {
     @Autowired
     private UniversitiesService universitiesService;
 
-    @DeleteMapping
-    public void deleteUni(String name, URL link) throws Exception {
-        universitiesService.delete( new Universities( name, link ) );
-    }
-
-    @PutMapping
-    public void updateUni(String name, URL link, @RequestBody Universities uni) throws Exception {
-        uni = new Universities( name, link );
-        universitiesService.update( uni );
-    }
-
-    @PostMapping
-    public Universities createUni(@RequestBody Universities uni) throws Exception {
-        uni = universitiesService.create( uni );
-        return uni;
-    }
-
     @GetMapping("/all")
     public List<Universities> getAllUni() throws Exception {
         return universitiesService.getAll();

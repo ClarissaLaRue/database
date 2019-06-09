@@ -12,7 +12,6 @@ public class Faculties implements Serializable, Entity {
     @GeneratedValue
     private Integer id;
 
-    @Id
     @Column(name = "UniversityID")
     private Integer UniversityId;
 
@@ -26,6 +25,10 @@ public class Faculties implements Serializable, Entity {
 
     public Faculties() {
 
+    }
+
+    public Faculties(String name) {
+        this.Name = name;
     }
 
     public Integer getId() {

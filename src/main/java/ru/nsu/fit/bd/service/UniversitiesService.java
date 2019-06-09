@@ -12,18 +12,6 @@ public class UniversitiesService {
     @Autowired
     private UniversitiesDao universitiesDao;
 
-    public void update(Universities obj) throws Exception {
-        universitiesDao.update( obj );
-    }
-
-    public void delete(Universities obj) throws Exception {
-        universitiesDao.delete( obj );
-    }
-
-    public Universities create(Universities obj) throws Exception {
-        return universitiesDao.create( obj );
-    }
-
     public List<Universities> getAll() throws Exception {
         return universitiesDao.getAll();
     }

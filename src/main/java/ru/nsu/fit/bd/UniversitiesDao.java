@@ -21,24 +21,8 @@ public class UniversitiesDao extends AbstractJDBCDao<Universities, Universities>
     }
 
     @Override
-    public String getCreateQuery() {
-        return "INSERT INTO UNIVERSITY (name, link) \n" +
-                "VALUES (?, ?);";
-    }
-
-    @Override
-    public String getUpdateQuery() {
-        return "UPDATE UNIVERSITY SET name = ? and link = ?;";
-    }
-
-    @Override
-    public String getDeleteQuery() {
-        return "DELETE FROM UNIVERSITY WHERE name = ? and link = ?;";
-    }
-
-    @Override
-    protected String getIdComparisionStatementPart() {
-        return "WHERE name = ? AND link = ?;";
+    protected String getPKQuery() {
+        return "SELECT * FROM UNIVERSITY WHERE name = ? AND link = ?;";
     }
 
     @Override
@@ -49,33 +33,13 @@ public class UniversitiesDao extends AbstractJDBCDao<Universities, Universities>
     }
 
     @Override
-    protected void prepareStatementForUpdate(PreparedStatement statement, Universities obj) throws SQLException {
-        statement.setInt( 1, obj.getUniversityId() );
-        statement.setString( 2, obj.name() );
-        statement.setURL( 3, obj.getLink() );
-    }
-
-    @Override
-    protected void prepareStatementForInsert(PreparedStatement statement, Universities obj) throws SQLException {
-        statement.setInt( 1, obj.getUniversityId() );
-        statement.setString( 2, obj.name() );
-        statement.setURL( 3, obj.getLink() );
-    }
-
-    @Override
-    protected void prepareStatementForDelete(PreparedStatement statement, Universities obj) throws SQLException {
-        statement.setInt( 1, obj.getUniversityId() );
-        statement.setString( 2, obj.name() );
-        statement.setURL( 3, obj.getLink() );
-    }
-
-    @Override
     protected List<Universities> parseResultSet(ResultSet rs) throws SQLException {
         List<Universities> universities = new ArrayList<>();
         while (rs.next()) {
-            Universities uni = new Universities(rs.getString("name"), rs.getURL("link"));
+            Universities uni = new Universities(rs.getInt("ID"), rs.getString("name"), rs.getURL("link"));
             universities.add(uni);
         }
         return universities;
     }
+
 }

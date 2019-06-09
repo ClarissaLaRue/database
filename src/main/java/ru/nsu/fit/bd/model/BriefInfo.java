@@ -2,40 +2,40 @@ package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
 @Entity
 @Table(name = "BRIEFINFO")
-public class BriefInfo implements Serializable {
+public class BriefInfo implements Serializable, Entity {
 
     @Id
     @Column(name = "ID")
     @GeneratedValue
     private Integer id;
 
-    @Id
     @Column(name = "UniversityID")
     private Integer UniversityId;
 
     @Column(name = "Impression")
-    private Integer impression;
+    private Float impression;
 
     @Column(name = "Classes")
-    private Integer Classes;
+    private Float  Classes;
 
     @Column(name = "Dormitory")
-    private Integer Dormitory;
+    private Float  Dormitory;
 
     @Column(name = "Infrastructure")
-    private Integer Infrastructure;
+    private Float  Infrastructure;
 
     @Column(name = "Teachers")
-    private Integer Teachers;
+    private Float  Teachers;
 
     @Column(name = "Scholarship")
-    private Integer Scholarship;
+    private Float  Scholarship;
 
     @Column(name = "Pospects")
-    private Integer Pospects;
+    private Float  Pospects;
 
     public Integer getId() {
         return id;
@@ -53,59 +53,69 @@ public class BriefInfo implements Serializable {
         UniversityId = universityId;
     }
 
-    public Integer getImpression() {
+    public Float  getImpression() {
         return impression;
     }
 
-    public void setImpression(Integer impression) {
+    public void setImpression(Float  impression) {
         this.impression = impression;
     }
 
-    public Integer getClasses() {
+    public Float  getClasses() {
         return Classes;
     }
 
-    public void setClasses(Integer classes) {
+    public void setClasses(Float  classes) {
         Classes = classes;
     }
 
-    public Integer getDormitory() {
+    public Float  getDormitory() {
         return Dormitory;
     }
 
-    public void setDormitory(Integer dormitory) {
+    public void setDormitory(Float  dormitory) {
         Dormitory = dormitory;
     }
 
-    public Integer getInfrastructure() {
+    public Float  getInfrastructure() {
         return Infrastructure;
     }
 
-    public void setInfrastructure(Integer infrastructure) {
+    public void setInfrastructure(Float  infrastructure) {
         Infrastructure = infrastructure;
     }
 
-    public Integer getTeachers() {
+    public Float  getTeachers() {
         return Teachers;
     }
 
-    public void setTeachers(Integer teachers) {
+    public void setTeachers(Float  teachers) {
         Teachers = teachers;
     }
 
-    public Integer getScholarship() {
+    public Float  getScholarship() {
         return Scholarship;
     }
 
-    public void setScholarship(Integer scholarship) {
+    public void setScholarship(Float  scholarship) {
         Scholarship = scholarship;
     }
 
-    public Integer getPospects() {
+    public Float getPospects() {
         return Pospects;
     }
 
-    public void setPospects(Integer pospects) {
+    public void setPospects(Float  pospects) {
         Pospects = pospects;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }

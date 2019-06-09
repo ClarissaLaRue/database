@@ -25,6 +25,12 @@ public class Universities implements Serializable, Entity {
     @Column(name = "Link")
     private URL link;
 
+    public Universities(int id, String name, URL link) {
+        this.UniversityId = id;
+        this.name = name;
+        this.link = link;
+    }
+
     public Integer getUniversityId(){
         return UniversityId;
     }
