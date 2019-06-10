@@ -16,16 +16,16 @@ public class Pospects implements Serializable, Entity {
     private Integer UniversityId;
 
     @Column(name = "IssueYear")
-    private Integer IssueYear;
+    private Float IssueYear;
 
     @Column(name = "StartSelary")
-    private Integer StartSelary;
+    private Float StartSelary;
 
     @Column(name = "UsefullStuding")
-    private Integer UsefullStuding;
+    private Float UsefullStuding;
 
     @Column(name = "Placement")
-    private Integer Placement;
+    private Float Placement;
 
     public Integer getId() {
         return id;
@@ -35,35 +35,35 @@ public class Pospects implements Serializable, Entity {
         this.id = id;
     }
 
-    public Integer getIssueYear() {
+    public Float getIssueYear() {
         return IssueYear;
     }
 
-    public void setIssueYear(Integer issueYear) {
+    public void setIssueYear(Float issueYear) {
         IssueYear = issueYear;
     }
 
-    public Integer getStartSelary() {
+    public Float getStartSelary() {
         return StartSelary;
     }
 
-    public void setStartSelary(Integer startSelary) {
+    public void setStartSelary(Float startSelary) {
         StartSelary = startSelary;
     }
 
-    public Integer getUsefullStuding() {
+    public Float getUsefullStuding() {
         return UsefullStuding;
     }
 
-    public void setUsefullStuding(Integer usefullStuding) {
+    public void setUsefullStuding(Float usefullStuding) {
         UsefullStuding = usefullStuding;
     }
 
-    public Integer getPlacement() {
+    public Float getPlacement() {
         return Placement;
     }
 
-    public void setPlacement(Integer placement) {
+    public void setPlacement(Float placement) {
         Placement = placement;
     }
 

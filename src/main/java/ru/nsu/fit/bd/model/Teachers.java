@@ -16,10 +16,10 @@ public class Teachers implements Serializable, Entity {
     private Integer UniversityId;
 
     @Column(name = "Seminarians")
-    private Integer Seminarians;
+    private Float Seminarians;
 
     @Column(name = "Lecturers")
-    private Integer Lecturers;
+    private Float Lecturers;
 
     public Integer getId() {
         return Id;
@@ -29,19 +29,19 @@ public class Teachers implements Serializable, Entity {
         Id = id;
     }
 
-    public Integer getSeminarians() {
+    public Float getSeminarians() {
         return Seminarians;
     }
 
-    public void setSeminarians(Integer seminarians) {
+    public void setSeminarians(Float seminarians) {
         Seminarians = seminarians;
     }
 
-    public Integer getLecturers() {
+    public Float getLecturers() {
         return Lecturers;
     }
 
-    public void setLecturers(Integer lecturers) {
+    public void setLecturers(Float lecturers) {
         Lecturers = lecturers;
     }
 
