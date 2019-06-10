@@ -2,32 +2,36 @@ package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
 @Entity
 @Table(name = "DORMITORY")
-public class Dormitory implements Serializable {
+public class Dormitory implements Serializable, Entity {
     @Id
     @Column(name = "ID")
     @GeneratedValue
     private Integer id;
 
+    @Column(name = "UniversityID")
+    private Integer UniversityId;
+
     @Column(name = "State")
-    private Integer State;
+    private Float State;
 
     @Column(name = "Shower")
-    private Integer Shower;
+    private Float Shower;
 
     @Column(name = "Restroom")
-    private Integer Restroom;
+    private Float Restroom;
 
     @Column(name = "Kitchen")
-    private Integer Kitchen;
+    private Float Kitchen;
 
     @Column(name = "PersonsCount")
-    private Integer PersonsCount;
+    private Float PersonsCount;
 
     @Column(name = "Price")
-    private Integer Price;
+    private Float Price;
 
     public Integer getId() {
         return id;
@@ -37,51 +41,61 @@ public class Dormitory implements Serializable {
         this.id = id;
     }
 
-    public Integer getState() {
+    public Float getState() {
         return State;
     }
 
-    public void setState(Integer state) {
+    public void setState(Float state) {
         State = state;
     }
 
-    public Integer getShower() {
+    public Float getShower() {
         return Shower;
     }
 
-    public void setShower(Integer shower) {
+    public void setShower(Float shower) {
         Shower = shower;
     }
 
-    public Integer getRestroom() {
+    public Float getRestroom() {
         return Restroom;
     }
 
-    public void setRestroom(Integer restroom) {
+    public void setRestroom(Float restroom) {
         Restroom = restroom;
     }
 
-    public Integer getKitchen() {
+    public Float getKitchen() {
         return Kitchen;
     }
 
-    public void setKitchen(Integer kitchen) {
+    public void setKitchen(Float kitchen) {
         Kitchen = kitchen;
     }
 
-    public Integer getPersonsCount() {
+    public Float getPersonsCount() {
         return PersonsCount;
     }
 
-    public void setPersonsCount(Integer personsCount) {
+    public void setPersonsCount(Float personsCount) {
         PersonsCount = personsCount;
     }
 
-    public Integer getPrice() {
+    public Float getPrice() {
         return Price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Float price) {
         Price = price;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }

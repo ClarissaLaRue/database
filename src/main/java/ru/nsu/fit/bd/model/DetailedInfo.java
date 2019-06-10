@@ -31,7 +31,7 @@ public class DetailedInfo implements Serializable, Entity {
     @Column(name = "Teachers")
     private String Teachers;
 
-    @Column(name = "Scholarship")
+    @Column(name = "ScholarshipDao")
     private String Scholarship;
 
     public Integer getId() {

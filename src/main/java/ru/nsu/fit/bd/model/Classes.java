@@ -2,20 +2,24 @@ package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
 @Entity
 @Table(name = "CLASSES")
-public class Classes implements Serializable {
+public class Classes implements Serializable, Entity {
     @Id
     @Column(name = "ID")
     @GeneratedValue
     private Integer Id;
 
+    @Column(name = "UniversityID")
+    private Integer UniversityId;
+
     @Column(name = "Profile")
-    private Integer Profile;
+    private Float Profile;
 
     @Column(name = "NonProfile")
-    private Integer NonProfile;
+    private Float NonProfile;
 
     public Integer getId() {
         return Id;
@@ -25,19 +29,29 @@ public class Classes implements Serializable {
         Id = id;
     }
 
-    public Integer getProfile() {
+    public Float getProfile() {
         return Profile;
     }
 
-    public void setProfile(Integer profile) {
+    public void setProfile(Float profile) {
         Profile = profile;
     }
 
-    public Integer getNonProfile() {
+    public Float getNonProfile() {
         return NonProfile;
     }
 
-    public void setNonProfile(Integer nonProfile) {
+    public void setNonProfile(Float nonProfile) {
         NonProfile = nonProfile;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }

@@ -1,10 +1,9 @@
-package ru.nsu.fit.bd;
+package ru.nsu.fit.bd.Dao;
 
 import org.springframework.stereotype.Repository;
 import ru.nsu.fit.bd.model.Universities;
 
 import javax.transaction.Transactional;
-import java.lang.annotation.Annotation;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

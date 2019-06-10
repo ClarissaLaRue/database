@@ -31,7 +31,7 @@ public class BriefInfo implements Serializable, Entity {
     @Column(name = "Teachers")
     private Float  Teachers;
 
-    @Column(name = "Scholarship")
+    @Column(name = "ScholarshipDao")
     private Float  Scholarship;
 
     @Column(name = "Pospects")

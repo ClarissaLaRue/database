@@ -2,14 +2,18 @@ package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
 @Entity
 @Table(name = "POSPECTS")
-public class Pospects implements Serializable {
+public class Pospects implements Serializable, Entity {
     @Id
     @Column(name = "ID")
     @GeneratedValue
     private Integer id;
+
+    @Column(name = "UniversityID")
+    private Integer UniversityId;
 
     @Column(name = "IssueYear")
     private Integer IssueYear;
@@ -61,5 +65,15 @@ public class Pospects implements Serializable {
 
     public void setPlacement(Integer placement) {
         Placement = placement;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }

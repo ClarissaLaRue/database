@@ -1,8 +1,9 @@
-package ru.nsu.fit.bd;
+package ru.nsu.fit.bd.Dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ru.nsu.fit.bd.Dao.InterfaceDao;
 
 import javax.persistence.Entity;
 import javax.transaction.Transactional;

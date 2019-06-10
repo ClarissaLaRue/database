@@ -2,14 +2,18 @@ package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
 @Entity
 @Table(name = "INFRASTRUCTURE")
-public class Infrastructure implements Serializable {
+public class Infrastructure implements Serializable, Entity {
     @javax.persistence.Id
     @Column(name = "ID")
     @GeneratedValue
     private Integer Id;
+
+    @Column(name = "UniversityID")
+    private Integer UniversityId;
 
     @Column(name = "CafeFood")
     private String CafeFood;
@@ -94,5 +98,15 @@ public class Infrastructure implements Serializable {
 
     public void setBusStops(String busStops) {
         BusStops = busStops;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }

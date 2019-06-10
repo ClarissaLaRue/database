@@ -1,4 +1,4 @@
-package ru.nsu.fit.bd;
+package ru.nsu.fit.bd.Dao;
 
 import javax.persistence.Entity;
 import java.io.Serializable;

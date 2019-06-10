@@ -1,11 +1,8 @@
-package ru.nsu.fit.bd;
+package ru.nsu.fit.bd.Dao;
 
 import org.springframework.stereotype.Repository;
 import ru.nsu.fit.bd.model.Faculties;
-import ru.nsu.fit.bd.model.Universities;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+
 import javax.transaction.Transactional;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,4 +1,4 @@
-package ru.nsu.fit.bd;
+package ru.nsu.fit.bd.Dao;
 
 import org.springframework.stereotype.Repository;
 import ru.nsu.fit.bd.model.BriefInfo;
@@ -21,7 +21,7 @@ public class BriefInfoDao extends AbstractJDBCDao<BriefInfo, String> {
     @Override
     protected String getPKQuery() {
         return "SELECT AVG(BRIEFINFO.Impression), AVG(BRIEFINFO.Classes), AVG(BRIEFINFO.Dormitory), " +
-                "AVG(BRIEFINFO.Infrastructure), AVG(BRIEFINFO.Teachers), AVG(BRIEFINFO.Scholarship), " +
+                "AVG(BRIEFINFO.Infrastructure), AVG(BRIEFINFO.Teachers), AVG(BRIEFINFO.ScholarshipDao), " +
                 "AVG(BRIEFINFO.Pospects) FROM BRIEFINFO, UNIVERSITY " +
                 "WHERE UNIVERSITY.Name = ? AND BRIEFINFO.UniversityID = UNIVERSITY.ID";
     }
@@ -41,7 +41,7 @@ public class BriefInfoDao extends AbstractJDBCDao<BriefInfo, String> {
             newInfo.setDormitory(rs.getFloat("AVG(BRIEFINFO.Dormitory)"));
             newInfo.setInfrastructure(rs.getFloat("AVG(BRIEFINFO.Infrastructure)"));
             newInfo.setTeachers(rs.getFloat("AVG(BRIEFINFO.Teachers)"));
-            newInfo.setScholarship(rs.getFloat("AVG(BRIEFINFO.Scholarship)"));
+            newInfo.setScholarship(rs.getFloat("AVG(BRIEFINFO.ScholarshipDao)"));
             newInfo.setPospects(rs.getFloat("AVG(BRIEFINFO.Pospects)"));
             info.add(newInfo);
         }

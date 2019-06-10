@@ -2,7 +2,7 @@ package ru.nsu.fit.bd.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.nsu.fit.bd.FacultiesDao;
+import ru.nsu.fit.bd.Dao.FacultiesDao;
 import ru.nsu.fit.bd.model.Faculties;
 
 import java.util.ArrayList;

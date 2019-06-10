@@ -1,4 +1,4 @@
-package ru.nsu.fit.bd;
+package ru.nsu.fit.bd.Dao;
 
 import org.springframework.stereotype.Repository;
 import ru.nsu.fit.bd.model.DetailedInfo;
@@ -38,7 +38,7 @@ public class DetailedInfoDao extends AbstractJDBCDao<DetailedInfo, String> {
             newInfo.setDormitory(rs.getString("Dormitory"));
             newInfo.setInfrastructure(rs.getString("Infrastructure"));
             newInfo.setTeachers(rs.getString("Teachers"));
-            newInfo.setScholarship(rs.getString("Scholarship"));
+            newInfo.setScholarship(rs.getString("ScholarshipDao"));
             detailedInfos.add(newInfo);
         }
         return detailedInfos;
