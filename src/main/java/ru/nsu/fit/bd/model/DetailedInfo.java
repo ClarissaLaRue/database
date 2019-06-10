@@ -2,10 +2,11 @@ package ru.nsu.fit.bd.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
 
 @Entity
 @Table(name = "DETAILINFO")
-public class DetailedInfo implements Serializable {
+public class DetailedInfo implements Serializable, Entity {
     @Id
     @Column(name = "ID")
     @GeneratedValue
@@ -16,22 +17,22 @@ public class DetailedInfo implements Serializable {
     private Integer UniversityId;
 
     @Column(name = "Impression")
-    private String[] impression;
+    private String impression;
 
     @Column(name = "Classes")
-    private String[] Classes;
+    private String Classes;
 
     @Column(name = "Dormitory")
-    private String[] Dormitory;
+    private String Dormitory;
 
     @Column(name = "Infrastructure")
-    private String[] Infrastructure;
+    private String Infrastructure;
 
     @Column(name = "Teachers")
-    private String[] Teachers;
+    private String Teachers;
 
     @Column(name = "Scholarship")
-    private String[] Scholarship;
+    private String Scholarship;
 
     public Integer getId() {
         return id;
@@ -41,27 +42,27 @@ public class DetailedInfo implements Serializable {
         return UniversityId;
     }
 
-    public String[] getImpression() {
+    public String getImpression() {
         return impression;
     }
 
-    public String[] getClasses() {
+    public String getClasses() {
         return Classes;
     }
 
-    public String[] getDormitory() {
+    public String getDormitory() {
         return Dormitory;
     }
 
-    public String[] getInfrastructure() {
+    public String getInfrastructure() {
         return Infrastructure;
     }
 
-    public String[] getTeachers() {
+    public String getTeachers() {
         return Teachers;
     }
 
-    public String[] getScholarship() {
+    public String getScholarship() {
         return Scholarship;
     }
 
@@ -73,27 +74,37 @@ public class DetailedInfo implements Serializable {
         UniversityId = universityId;
     }
 
-    public void setImpression(String[] impression) {
+    public void setImpression(String impression) {
         this.impression = impression;
     }
 
-    public void setClasses(String[] classes) {
+    public void setClasses(String classes) {
         Classes = classes;
     }
 
-    public void setDormitory(String[] dormitory) {
+    public void setDormitory(String dormitory) {
         Dormitory = dormitory;
     }
 
-    public void setInfrastructure(String[] infrastructure) {
+    public void setInfrastructure(String infrastructure) {
         Infrastructure = infrastructure;
     }
 
-    public void setTeachers(String[] teachers) {
+    public void setTeachers(String teachers) {
         Teachers = teachers;
     }
 
-    public void setScholarship(String[] scholarship) {
+    public void setScholarship(String scholarship) {
         Scholarship = scholarship;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }
